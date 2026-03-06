@@ -1,0 +1,188 @@
+.contact-section {
+    background: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 32px;
+}
+
+.map-wrapper {
+    height: 500px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-200);
+}
+
+/* Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    border: 1px solid var(--gray-200);
+    transition: var(--transition-fast);
+}
+
+.contact-card:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+}
+
+.contact-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-card-icon-green {
+    background: var(--secondary-light);
+    color: var(--secondary-dark);
+}
+
+.contact-card-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+}
+
+.contact-card-text {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+.contact-phone {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    display: block;
+}
+
+.contact-card-link {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.contact-card-link:hover {
+    text-decoration: underline;
+}
+
+.contact-hours {
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    border: 1px solid var(--gray-200);
+}
+
+.contact-hours-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--gray-800);
+    margin-bottom: 12px;
+}
+
+.hours-table-contact {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.hours-table-contact td {
+    padding: 5px 0;
+    color: var(--gray-600);
+}
+
+.hours-table-contact td:first-child {
+    width: 110px;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.hours-table-contact tr.holiday td {
+    color: #EF4444;
+}
+
+.contact-btns {
+    display: flex;
+    gap: 12px;
+}
+
+/* Emergency Banner */
+.emergency-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(135deg, #FEF2F2, #FFF7ED);
+    border: 1.5px solid #FCA5A5;
+    border-radius: var(--radius-xl);
+    padding: 20px 28px;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: #991B1B;
+    line-height: 1.6;
+}
+
+.emergency-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.emergency-banner a {
+    color: #DC2626;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.emergency-banner a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-wrapper {
+        height: 360px;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-btns {
+        flex-direction: column;
+    }
+
+    .emergency-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+}

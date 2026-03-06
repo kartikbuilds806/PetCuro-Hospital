@@ -1,0 +1,207 @@
+.reviews-section {
+    background: var(--gray-50);
+}
+
+.overall-rating {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: 24px 36px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-100);
+}
+
+.rating-big {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.star-rating {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 4px;
+}
+
+.star {
+    font-size: 1.1rem;
+    color: var(--gray-200);
+}
+
+.star.filled {
+    color: #F59E0B;
+}
+
+.rating-text {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--gray-700);
+}
+
+.rating-sub {
+    font-size: 0.78rem;
+    color: var(--gray-400);
+}
+
+/* Reviews Grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* WhatsApp-style chat bubble */
+.review-bubble {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    border-top-left-radius: 4px;
+    padding: 22px;
+    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.08), 0 1px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--gray-100);
+    position: relative;
+    transition: var(--transition);
+}
+
+.review-bubble:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(14, 165, 233, 0.14), 0 4px 12px rgba(0, 0, 0, 0.07);
+    border-color: var(--primary-light);
+}
+
+/* WhatsApp green dot in top-right */
+.review-bubble::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--whatsapp);
+}
+
+/* Header */
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.reviewer-name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.reviewer-loc {
+    font-size: 0.78rem;
+    color: var(--gray-400);
+}
+
+.review-time {
+    margin-left: auto;
+    font-size: 0.72rem;
+    color: var(--gray-400);
+    flex-shrink: 0;
+    padding-right: 20px;
+}
+
+/* Message bubble */
+.review-message {
+    background: #DCF8C6;
+    /* WhatsApp green message bubble */
+    border-radius: var(--radius-md);
+    border-top-right-radius: 3px;
+    padding: 14px 16px;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.review-message p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #1a2e1a;
+    margin-bottom: 4px;
+}
+
+.review-check {
+    text-align: right;
+    font-size: 0.7rem;
+    color: #4FC3F7;
+    margin-top: 2px;
+}
+
+/* Footer */
+.review-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.review-footer .star-rating {
+    margin-bottom: 0;
+}
+
+.review-footer .star {
+    font-size: 0.9rem;
+}
+
+.review-pet {
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    font-family: var(--font-heading);
+}
+
+/* CTA */
+.reviews-cta {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.reviews-cta p {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .overall-rating {
+        padding: 20px 24px;
+    }
+}
