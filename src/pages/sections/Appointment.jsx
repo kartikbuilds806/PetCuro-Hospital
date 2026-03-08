@@ -315,8 +315,8 @@ export default function Appointment() {
                             <h3>🕐 Clinic Hours</h3>
                             <table className="appt-hours-table">
                                 <tbody>
-                                    {[['Mon', '10 AM – 7 PM'], ['Tue', '10 AM – 7 PM'], ['Wed', '10 AM – 7 PM'], ['Thu', 'Holiday ❌'], ['Fri', '10 AM – 7 PM'], ['Sat', '10 AM – 7 PM'], ['Sun', '10 AM – 7 PM']].map(([d, h]) =>
-                                        <tr key={d} className={d === 'Thu' ? 'holiday' : ''}><td>{d}</td><td>{h}</td></tr>
+                                    {[['Mon', '10 AM – 7 PM'], ['Tue', '10 AM – 7 PM'], ['Wed', '10 AM – 7 PM'], ['Thu', '10 AM – 7 PM'], ['Fri', '10 AM – 7 PM'], ['Sat', '10 AM – 7 PM'], ['Sun', '10 AM – 7 PM']].map(([d, h]) =>
+                                        <tr key={d}><td>{d}</td><td>{h}</td></tr>
                                     )}
                                 </tbody>
                             </table>
