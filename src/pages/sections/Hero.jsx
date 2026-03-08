@@ -71,20 +71,6 @@ export default function Hero() {
                     <div className="hero-image-wrapper">
                         <div className="hero-image-card">
                             <img src="/assets/hospital.jpg" alt="PetCuro veterinary hospital in Dehradun – modern clean facility" className="hero-img hero-img-animated" />
-                            <div className="hero-img-badge hero-img-badge-1">
-                                <span className="badge-emoji">🐕</span>
-                                <div>
-                                    <div className="badge-title">Expert Dog Care</div>
-                                    <div className="badge-sub">in Dehradun</div>
-                                </div>
-                            </div>
-                            <div className="hero-img-badge hero-img-badge-2">
-                                <span className="badge-emoji">🐱</span>
-                                <div>
-                                    <div className="badge-title">Cat Clinic</div>
-                                    <div className="badge-sub">Near You</div>
-                                </div>
-                            </div>
                         </div>
 
                         {/* Stats */}

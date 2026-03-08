@@ -170,64 +170,25 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: float 6s ease-in-out infinite;
+    object-position: center top;
+    animation: slideUpFloat 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     display: block;
 }
 
 /* Animated image variant — zoom in on reveal */
 .hero-img-animated {
-    transform: scale(1.08);
+    transform: scale(1.15) translateY(20px);
     opacity: 0;
-    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s ease;
 }
 
 .img-reveal.revealed .hero-img-animated {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
     opacity: 1;
-    animation: float 6s ease-in-out 0.9s infinite;
 }
 
 .hero-image-card:hover .hero-img {
-    transform: scale(1.04);
-}
-
-/* Image badges */
-.hero-img-badge {
-    position: absolute;
-    background: white;
-    border-radius: var(--radius-md);
-    padding: 10px 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: var(--shadow-lg);
-}
-
-.hero-img-badge-1 {
-    bottom: 20px;
-    left: 15px;
-}
-
-.hero-img-badge-2 {
-    top: 15px;
-    right: 15px;
-}
-
-.badge-emoji {
-    font-size: 1.5rem;
-}
-
-.badge-title {
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--gray-900);
-}
-
-.badge-sub {
-    font-size: 0.72rem;
-    color: var(--gray-500);
+    transform: scale(1.02);
 }
 
 /* Stats */
@@ -338,29 +299,9 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Show both badges on mobile by making badge 2 visible but repositioned */
-    .hero-img-badge-2 {
-        display: flex;
-        top: 10px;
-        right: 10px;
-        font-size: 0.78rem;
-        padding: 7px 10px;
-    }
-
-    .hero-img-badge-1 {
-        bottom: 10px;
-        left: 10px;
-        font-size: 0.78rem;
-        padding: 7px 10px;
-    }
-
-    .badge-emoji {
-        font-size: 1.1rem;
-    }
-
-    /* Make hero image taller on mobile */
+    /* Clean image on mobile - no badges, full height */
     .hero-image-card {
-        aspect-ratio: 4/3;
-        min-height: 220px;
+        aspect-ratio: auto;
+        min-height: 400px;
     }
 }

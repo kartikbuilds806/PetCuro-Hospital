@@ -26,14 +26,7 @@ export default function About() {
                             alt="Dr. Atul Uniyal – Veterinary Surgeon at PetCuro Hospital Dehradun"
                             className="about-img"
                         />
-                        <div className="about-exp-card">
-                            <div className="about-exp-value">Expert</div>
-                            <div className="about-exp-label">Veterinary Surgeon</div>
-                        </div>
-                        <div className="about-trust-card">
-                            <span className="trust-star">⭐⭐⭐⭐⭐</span>
-                            <div>Trusted by 500+ Pet Parents</div>
-                        </div>
+
                     </div>
                 </div>
 
