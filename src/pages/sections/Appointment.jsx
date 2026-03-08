@@ -188,7 +188,6 @@ export default function Appointment() {
                                             </button>
                                         ))}
                                     </div>
-                                    <p className="cal-note"></p>
                                 </div>
 
                                 {selectedDate && (
