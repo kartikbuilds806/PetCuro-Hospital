@@ -170,7 +170,7 @@ export default function Appointment() {
                                         <button className="cal-nav-btn" onClick={nextMonth} aria-label="Next month"><ChevronRight size={20} /></button>
                                     </div>
                                     <div className="calendar-days-header">
-                                        {dayNames.map(d => <div key={d} className={`cal-day-name ${d === 'Thu' ? 'holiday-header' : ''}`}>{d}</div>)}
+                                        {dayNames.map(d => <div key={d} className={`cal-day-name`}>{d}</div>)}
                                     </div>
                                     <div className="calendar-grid">
                                         {Array.from({ length: firstDay }).map((_, i) => <div key={`e${i}`}></div>)}
@@ -188,7 +188,7 @@ export default function Appointment() {
                                             </button>
                                         ))}
                                     </div>
-                                    <p className="cal-note"><span className="holiday-legend">●</span> Thursday = Doctor Holiday</p>
+                                    <p className="cal-note"></p>
                                 </div>
 
                                 {selectedDate && (

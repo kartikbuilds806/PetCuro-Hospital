@@ -6,7 +6,7 @@ const hours = [
     ['Monday', '10:00 AM – 7:00 PM', false],
     ['Tuesday', '10:00 AM – 7:00 PM', false],
     ['Wednesday', '10:00 AM – 7:00 PM', false],
-    ['Thursday', 'Doctor Holiday', true],
+    ['Thursday', '10:00 AM – 7:00 PM', false],
     ['Friday', '10:00 AM – 7:00 PM', false],
     ['Saturday', '10:00 AM – 7:00 PM', false],
     ['Sunday', '10:00 AM – 7:00 PM', false],
