@@ -130,9 +130,26 @@
     color: var(--primary);
 }
 
-/* Visual */
+/* Visual — scroll-reveal based animation */
 .hero-visual {
-    animation: slideInRight 0.8s ease 0.3s both;
+    display: block;
+}
+
+/* Scroll reveal: slide in from right */
+.img-reveal {
+    opacity: 0;
+    transform: translateX(48px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-reveal.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Glowing ring around the card on reveal */
+.img-reveal.revealed .hero-image-card {
+    box-shadow: var(--shadow-xl), 0 0 0 3px rgba(14, 165, 233, 0.18), 0 0 40px rgba(14, 165, 233, 0.12);
 }
 
 .hero-image-wrapper {
@@ -154,6 +171,25 @@
     height: 100%;
     object-fit: cover;
     animation: float 6s ease-in-out infinite;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+}
+
+/* Animated image variant — zoom in on reveal */
+.hero-img-animated {
+    transform: scale(1.08);
+    opacity: 0;
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s ease;
+}
+
+.img-reveal.revealed .hero-img-animated {
+    transform: scale(1);
+    opacity: 1;
+    animation: float 6s ease-in-out 0.9s infinite;
+}
+
+.hero-image-card:hover .hero-img {
+    transform: scale(1.04);
 }
 
 /* Image badges */
@@ -269,12 +305,22 @@
 
     .hero-visual {
         order: -1;
-        max-width: 500px;
+        max-width: 520px;
         margin: 0 auto;
+        width: 100%;
     }
 
     .hero-stats {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* On tablet/mobile: slide from top instead of side */
+    .img-reveal {
+        transform: translateY(32px);
+    }
+
+    .img-reveal.revealed {
+        transform: translateY(0);
     }
 }
 
@@ -292,7 +338,29 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* Show both badges on mobile by making badge 2 visible but repositioned */
     .hero-img-badge-2 {
-        display: none;
+        display: flex;
+        top: 10px;
+        right: 10px;
+        font-size: 0.78rem;
+        padding: 7px 10px;
+    }
+
+    .hero-img-badge-1 {
+        bottom: 10px;
+        left: 10px;
+        font-size: 0.78rem;
+        padding: 7px 10px;
+    }
+
+    .badge-emoji {
+        font-size: 1.1rem;
+    }
+
+    /* Make hero image taller on mobile */
+    .hero-image-card {
+        aspect-ratio: 4/3;
+        min-height: 220px;
     }
 }

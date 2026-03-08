@@ -1,8 +1,11 @@
 import React from 'react';
 import { CheckCircle2, Award, Heart, Stethoscope, AlertCircle, Users } from 'lucide-react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './About.css';
 
 export default function About() {
+    const imgRef = useScrollReveal();
+    const contentRef = useScrollReveal();
     const highlights = [
         { icon: <Award size={18} />, text: 'Expert Veterinary Surgeon – Dr. Atul Uniyal' },
         { icon: <Heart size={18} />, text: 'Compassionate & ethical care for every pet' },
@@ -16,7 +19,7 @@ export default function About() {
         <section className="section about-section" id="about" aria-labelledby="about-title">
             <div className="container about-inner">
                 {/* Left: Image */}
-                <div className="about-image-col">
+                <div className="about-image-col img-reveal" ref={imgRef}>
                     <div className="about-img-wrapper">
                         <img
                             src="/assets/download.jpg"
@@ -35,7 +38,7 @@ export default function About() {
                 </div>
 
                 {/* Right: Content */}
-                <div className="about-content-col">
+                <div className="about-content-col content-reveal" ref={contentRef}>
                     <span className="section-label">
                         <Heart size={14} /> About PetCuro
                     </span>

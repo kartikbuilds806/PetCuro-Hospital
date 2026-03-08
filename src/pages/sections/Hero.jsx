@@ -1,9 +1,12 @@
 import React from 'react';
 import { Phone, MessageCircle, CalendarDays, ChevronDown, Star, Award, Shield } from 'lucide-react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Hero.css';
 
 export default function Hero() {
     const waUrl = `https://wa.me/919084709800?text=${encodeURIComponent('Hi! I would like to book an appointment at PetCuro Hospital.')}`;
+    const imgReveal = useScrollReveal();
+    const contentReveal = useScrollReveal();
 
     const scrollToSection = (id) => {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -64,10 +67,10 @@ export default function Hero() {
                 </div>
 
                 {/* Right Visual */}
-                <div className="hero-visual" aria-hidden="true">
+                <div className="hero-visual img-reveal" ref={imgReveal} aria-hidden="true">
                     <div className="hero-image-wrapper">
                         <div className="hero-image-card">
-                            <img src="/assets/hospital.jpg" alt="PetCuro veterinary hospital in Dehradun – modern clean facility" className="hero-img" />
+                            <img src="/assets/hospital.jpg" alt="PetCuro veterinary hospital in Dehradun – modern clean facility" className="hero-img hero-img-animated" />
                             <div className="hero-img-badge hero-img-badge-1">
                                 <span className="badge-emoji">🐕</span>
                                 <div>

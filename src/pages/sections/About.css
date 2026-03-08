@@ -14,6 +14,30 @@
     position: relative;
 }
 
+/* Scroll reveal: slide in from left */
+.about-image-col.img-reveal {
+    opacity: 0;
+    transform: translateX(-48px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-image-col.img-reveal.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Content column: slide in from right */
+.about-content-col.content-reveal {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.about-content-col.content-reveal.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .about-img-wrapper {
     position: relative;
     display: inline-block;
@@ -26,6 +50,12 @@
     object-fit: cover;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.about-img-wrapper:hover .about-img {
+    transform: scale(1.025);
+    box-shadow: var(--shadow-xl), 0 0 0 3px rgba(14, 165, 233, 0.15);
 }
 
 .about-exp-card {
@@ -172,13 +202,27 @@
     }
 
     .about-image-col {
-        max-width: 500px;
+        max-width: 520px;
         margin: 0 auto;
         width: 100%;
     }
 
     .about-img {
         height: 360px;
+    }
+
+    /* On tablet: slide from bottom instead */
+    .about-image-col.img-reveal {
+        transform: translateY(32px);
+    }
+    .about-image-col.img-reveal.revealed {
+        transform: translateY(0);
+    }
+    .about-content-col.content-reveal {
+        transform: translateY(24px);
+    }
+    .about-content-col.content-reveal.revealed {
+        transform: translateY(0);
     }
 }
 
@@ -187,12 +231,31 @@
         grid-template-columns: 1fr;
     }
 
+    .about-img {
+        /* Shorter on mobile so overlapping cards don't get clipped */
+        height: 260px;
+    }
+
+    /* Pull overlapping cards inside image bounds on mobile */
     .about-exp-card {
-        right: 0;
-        bottom: -15px;
+        right: 8px;
+        bottom: 8px;
+        padding: 10px 14px;
+    }
+
+    .about-exp-value {
+        font-size: 1.1rem;
     }
 
     .about-trust-card {
-        left: 0;
+        left: 8px;
+        top: 8px;
+        font-size: 0.72rem;
+        max-width: 130px;
+    }
+
+    /* Add padding-bottom to wrapper so exp card doesn't overflow */
+    .about-img-wrapper {
+        padding-bottom: 0;
     }
 }
