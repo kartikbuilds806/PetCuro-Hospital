@@ -54,7 +54,7 @@ export default function Footer() {
                             </div>
                             <div className="footer-contact-item">
                                 <Clock size={16} />
-                                <span>Mon–Wed, Fri–Sun: 10 AM – 7 PM<br />Thursday: Doctor Holiday</span>
+                                <span>Mon–Sun: 10 AM – 7 PM</span>
                             </div>
                         </div>
                     </div>
@@ -68,12 +68,12 @@ export default function Footer() {
                                     ['Monday', '10:00 AM – 7:00 PM'],
                                     ['Tuesday', '10:00 AM – 7:00 PM'],
                                     ['Wednesday', '10:00 AM – 7:00 PM'],
-                                    ['Thursday', 'Doctor Holiday ❌'],
+                                    ['Thursday', '10:00 AM – 7:00 PM'],
                                     ['Friday', '10:00 AM – 7:00 PM'],
                                     ['Saturday', '10:00 AM – 7:00 PM'],
                                     ['Sunday', '10:00 AM – 7:00 PM'],
                                 ].map(([day, hrs]) => (
-                                    <tr key={day} className={day === 'Thursday' ? 'holiday' : ''}>
+                                    <tr key={day}>
                                         <td>{day}</td>
                                         <td>{hrs}</td>
                                     </tr>
